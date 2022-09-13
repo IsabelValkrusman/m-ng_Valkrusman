@@ -11,6 +11,7 @@ namespace mäng_Valkrusman
         public int punktideArv();
         public string info();
 
+      
 
     }
     
