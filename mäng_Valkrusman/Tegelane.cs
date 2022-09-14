@@ -6,13 +6,12 @@ using System.Threading.Tasks;
 
 namespace mäng_Valkrusman
 {
-    internal class Tegelane:Üksus, Comparable<Tegelane>
+    internal class Tegelane:IÜksus, Comparable<Tegelane>
     {
-        public List<string> nimi;
-        public List<Ese> esemeteNimekiri = new List<Ese>();
+        private List<string> nimi;
+        List<Ese> esemeteNimekiri = new List<Ese>();
 
-
-
+       
 
         public Tegelane()
         {
@@ -69,7 +68,8 @@ namespace mäng_Valkrusman
                 return -1;     
             }
         }
-            
+          
+        private int EsesKogus() { return this.esemeteNimekiri.Count; }  
     }
    
         

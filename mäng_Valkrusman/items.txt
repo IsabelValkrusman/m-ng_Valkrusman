@@ -1,4 +1,4 @@
-ï»¿Tavaline haldjarÃ¼Ã¼;50
-VÃµlupÃ¼ksid;100
-VÃ¤lguvastane pross;250
-VÃµlukeep;1000
+Tavaline haldjarüü;50
+Võlupüksid;100
+Välguvastane pross;250
+Võlukeep;1000

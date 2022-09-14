@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace mäng_Valkrusman
 {
-    internal class Ese:Üksus
+    internal class Ese:IÜksus
     {
-        public string nimetus;
-        public int arv;
+         string nimetus;
+         int arv;
 
       public Ese (string nimetus, int arv)
       {

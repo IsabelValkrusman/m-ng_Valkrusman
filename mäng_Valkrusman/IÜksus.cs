@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace mäng_Valkrusman
 {
-     public interface Üksus
+      internal interface IÜksus
     {
-        public int punktideArv();
-        public string info();
+         int punktideArv();
+         string info();
 
       
 
