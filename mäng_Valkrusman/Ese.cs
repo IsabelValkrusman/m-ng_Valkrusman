@@ -17,8 +17,8 @@ namespace mäng_Valkrusman
             this.arv = arv;
       }
       
-       public int punktideArv() { return arv; }
-       public string info() { return nimetus; }
+       public int PunktideArv() { return arv; }
+       public string Info() { return nimetus; }
 
 
 

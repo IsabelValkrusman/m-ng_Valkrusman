@@ -8,8 +8,8 @@ namespace mäng_Valkrusman
 {
       internal interface IÜksus
     {
-         int punktideArv();
-         string info();
+         int PunktideArv();
+         string Info();
 
       
 

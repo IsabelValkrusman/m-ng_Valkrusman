@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace mäng_Valkrusman
 {
-    internal class Tegelane:IÜksus, Comparable<Tegelane>
+    internal class Tegelane:IÜksus, IComparable<Tegelane>
     {
-        private List<string> nimi;
+        private string nimi;
         List<Ese> esemeteNimekiri = new List<Ese>();
 
        
@@ -16,10 +16,10 @@ namespace mäng_Valkrusman
         public Tegelane()
         {
             this.esemeteNimekiri = new List<Ese>();
-            this.nimi = new List<string>();
+            this.nimi = "";
         }
 
-        public Tegelane(List<string> nimi)
+        public Tegelane(string nimi)
         {
             this.nimi = nimi;
         }
@@ -29,47 +29,48 @@ namespace mäng_Valkrusman
             esemeteNimekiri.Add(ese);
         }
 
-        public int punktideArv()
+        public int PunktideArv()
         {
             int summa = 0;
 
             foreach (Ese ese in esemeteNimekiri)
             {
-                summa += ese.punktideArv();
+                summa += ese.PunktideArv();
             }
             return summa;
         }
-        public string info()
+        public string Info()
         {
 
-            return $"tegelase nimi on {this.nimi} tema ese on {this.esemeteNimekiri} ja punktide arv on{this.punktideArv()}";
+            return $"tegelase nimi on {this.nimi} tal on {this.esemeteNimekiri.Count} eset ja punktide arv on {this.PunktideArv()}";
 
 
 
         }
         
-        public void väljastaEsemed()
+        public void VäljastaEsemed()
         {
             foreach(Ese ese in esemeteNimekiri)
             {
-                Console.WriteLine(ese.info());
+                Console.WriteLine(ese.Info());
             }
         }
+    
         public int CompareTo(Tegelane other)
         {
-            
-            if(this.esemeteNimekiri.Count > other.esemeteNimekiri.Count)
+            if (this.esemeteNimekiri.Count > other.esemeteNimekiri.Count)
+            {
+                return -1;
+            }
+            else if(this.esemeteNimekiri.Count < other.esemeteNimekiri.Count) 
             {
                 return 1;
-            }
-            
-            else
+            } else
             {
-                return -1;     
+                return 0;
             }
+
         }
-          
-        private int EsesKogus() { return this.esemeteNimekiri.Count; }  
     }
    
         

@@ -1,4 +1,4 @@
 ﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+using mäng_Valkrusman;
 
-StreamWriter sw = new StreamWriter(@"..\..\..\items.txt");
+Peaklass.Uus_mang(5);

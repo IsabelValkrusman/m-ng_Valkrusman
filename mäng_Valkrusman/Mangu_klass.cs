@@ -15,40 +15,33 @@ namespace mäng_Valkrusman
             this.tegelased = tegelased;
         }
 
-        public List<Tegelane> SuurimaEsemeteArvuga()
+        public Tegelane SuurimaEsemeteArvuga()
         {
-            List<Tegelane> voitjad = new List<Tegelane>();
-            Tegelane sorted = tegelased[0];
-            foreach(Tegelane t in tegelased)
+            List<Tegelane> voitjad = new List<Tegelane>(tegelased);
+            voitjad.Sort();
+            if(voitjad.Count > 0)
             {
-                int num = sorted.CompareTo(t);
-                if(num<8)
-                {
-                    sorted= t;
-                    voitjad.Clear();
-                }
-                if (num == 0) voitjad.Add(t);
+                return voitjad[0];
             }
-            voitjad.Add(sorted);
-            return voitjad;
+            throw new Exception();
         }
 
-        public Tegelane suurimaPunktideArvuga()
+        public Tegelane SuurimaPunktideArvuga()
         {
             int parim = 0;
-            Tegelane voitjad = tegelased[0];
+            Tegelane voitja = tegelased[0];
             foreach(var t in tegelased)
             {
-                int arv = t.punktideArv();
+                int arv = t.PunktideArv();
                 if(arv>parim)
                 {
                     parim = arv;
-                    voitjad = t;
+                    voitja = t;
 
                 }
                
             }
-            return voitjad;
+            return voitja;
         }
             
     }
